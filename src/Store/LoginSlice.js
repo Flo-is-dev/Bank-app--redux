@@ -21,6 +21,12 @@ const loginSlice = createSlice({
     token: null,
     error: null,
   },
+  reducers: {
+    clearLoginData: (state) => {
+      console.log("CLEAR TOKEN");
+      state.token = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loginUser.pending, (state) => {
@@ -45,4 +51,5 @@ const loginSlice = createSlice({
   },
 });
 
+export const { clearLoginData } = loginSlice.actions;
 export default loginSlice.reducer;
