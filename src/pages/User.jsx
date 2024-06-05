@@ -35,6 +35,13 @@ const User = () => {
         setIsEditing(false) 
     }
 
+    const handleCancel = () => {
+        setEditFirstName(user.body.firstName)
+        setEditLastName(user.body.lastName)
+
+        setIsEditing(false)
+    }
+
 
     return (
         <>
@@ -65,7 +72,7 @@ const User = () => {
                     {user && (isEditing ? 
                         <div className="editContainer">
                             <button className="edit-button" onClick={handleEdit}>Save </button>
-                            <button className="edit-button" onClick={() => setIsEditing(false)}>Cancel </button>
+                            <button className="edit-button" onClick={handleCancel}>Cancel </button>
                         </div>
                         :
                         <button className="edit-button" onClick={() => setIsEditing(true)}>Edit Name</button>)
