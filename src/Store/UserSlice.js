@@ -23,19 +23,16 @@ export const GetUserData = createAsyncThunk(
 );
 
 export const UpdateUserData = createAsyncThunk(
-  "user/getUserData",
-  async (token, { rejectWithValue }) => {
+  "user/updateUserData",
+  async ({ token, data }, { rejectWithValue }) => {
     try {
-      // les headers doivent être en troisième argument pour axios.post
-
-      const response = await axios.post(
+      const response = await axios.put(
         "http://localhost:3001/api/v1/user/profile",
-        {}, // Corps de la requête, vide si aucun corps n'est requis
+        data,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       return response.data;
     } catch (error) {
-      // Utilisation correcte de rejectWithValue pour retourner les erreurs
       return rejectWithValue(
         error.response ? error.response.data : "Something went wrong"
       );

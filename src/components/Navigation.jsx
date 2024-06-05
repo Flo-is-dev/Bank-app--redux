@@ -1,8 +1,8 @@
 import logo from  "../designs/img/argentBankLogo.png"
 import { NavLink, useNavigate   } from "react-router-dom";
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { GetUserData, clearUserData  } from "../Store/UserSlice";
+import { clearUserData  } from "../Store/UserSlice";
+import { clearLoginData  } from "../Store/LoginSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
@@ -12,24 +12,15 @@ const Navigation = () => {
     const dispatch = useDispatch();
     const navigate  = useNavigate();
     
-    const { user, token } = useSelector(state => ({
+    const { user } = useSelector(state => ({
         user: state.user.user,
-        token: state.login.token 
     }));
 
-    useEffect(() => {
-        if (token) {
-            dispatch(GetUserData(token));
-        }
-    }, [token,dispatch]);
-
-    // console.log("USER DATTA", user ? user.body : "No user data");
-
     const handleLogout = () => {
-        dispatch(clearUserData());
+        dispatch(clearUserData());  
+        dispatch(clearLoginData());  
         navigate('/SignIn'); 
     };
-
 
     return (
         <nav className="main-nav">
