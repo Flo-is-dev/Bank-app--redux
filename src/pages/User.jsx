@@ -61,8 +61,8 @@ const User = () => {
                             <textarea defaultValue={user.body.lastName} onChange={(e) => setEditLastName(e.target.value)}></textarea>
                             </div> : 
                             <div className="nameContainer">
-                                <span>{(editFirstName ? editFirstName : user.body.firstName) || "No user data"} </span>
-                                <span>{(editLastName ? editLastName : user.body.lastName) || "No user data"}!</span>
+                                <span>{(editFirstName ? editFirstName : user.body.firstName) || ""} </span>
+                                <span>{(editLastName ? editLastName : user.body.lastName) || ""}!</span>
                             </div>
                         }
                          

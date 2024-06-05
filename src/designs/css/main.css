@@ -312,6 +312,9 @@ body #root {
 
 .header .textareaContainer textarea {
   resize: none;
+  padding: 12px 0px 0px 20px;
+  height: 27px;
+  border-radius: 4px;
 }
 
 .transaction-button {
