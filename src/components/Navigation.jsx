@@ -19,7 +19,7 @@ const Navigation = () => {
     const handleLogout = () => {
         dispatch(clearUserData());  
         dispatch(clearLoginData());  
-        navigate('/SignIn'); 
+        navigate('/'); 
     };
 
     return (

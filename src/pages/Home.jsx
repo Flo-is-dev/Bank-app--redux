@@ -1,4 +1,3 @@
-
 import Footer from "../components/Footer";
 import MainHome from "../components/MainHome";
 import Navigation from "../components/Navigation";

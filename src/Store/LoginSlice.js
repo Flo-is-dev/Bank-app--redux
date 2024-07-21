@@ -23,7 +23,6 @@ const loginSlice = createSlice({
   },
   reducers: {
     clearLoginData: (state) => {
-      console.log("CLEAR TOKEN");
       state.token = null;
     },
   },

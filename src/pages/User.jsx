@@ -23,12 +23,10 @@ const User = () => {
         }
     }, []);
 
-    // console.log("USER DATTA", user ? user.body : "No user data");
-
     const handleEdit = () => {
         const data = {
             firstName: editFirstName ? editFirstName : user.body.firstName,
-            lastName : editLastName ? editLastName : user.body.lastname
+            lastName : editLastName ? editLastName : user.body.lastName
         };
 
         dispatch(UpdateUserData({token, data}))

@@ -49,7 +49,6 @@ const userSlice = createSlice({
   },
   reducers: {
     clearUserData: (state) => {
-      console.log("CLEAR USER");
       state.user = null;
     },
   },
