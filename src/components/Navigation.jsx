@@ -41,7 +41,7 @@ const Navigation = () => {
                             {user?.body?.firstName}
                         </NavLink>
                         <button  onClick={handleLogout}>
-                            <FontAwesomeIcon icon={faRightFromBracket} /> Sign Out
+                            <FontAwesomeIcon icon={faRightFromBracket} /> Sign&nbsp;Out
                         </button>
                     </>
                 ) : (

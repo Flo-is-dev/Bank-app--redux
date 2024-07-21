@@ -151,6 +151,12 @@ body #root {
   }
 }
 
+@media (max-width: 450px) {
+  .main-nav {
+    padding: 5px;
+  }
+}
+
 .features {
   display: flex;
   flex-direction: column;
