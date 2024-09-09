@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { GetUserData, UpdateUserData } from "../Store/UserSlice";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
+
 
 const User = () => {
     const dispatch = useDispatch();
@@ -16,8 +18,14 @@ const User = () => {
     const [isEditing,setIsEditing] = useState(false);
     const [editFirstName, setEditFirstName] = useState("");
     const [editLastName, setEditLastName] = useState("");
+    const navigate  = useNavigate();
+
 
     useEffect(() => {
+        
+        if (!token) {
+            navigate('/'); 
+        }
         if (token && !loading) {
             dispatch(GetUserData(token));
         }
