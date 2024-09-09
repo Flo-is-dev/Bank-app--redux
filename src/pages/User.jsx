@@ -44,10 +44,8 @@ const User = () => {
     const handleCancel = () => {
         setEditFirstName(user.body.firstName)
         setEditLastName(user.body.lastName)
-
         setIsEditing(false)
     }
-
 
     return (
         <>
@@ -63,8 +61,8 @@ const User = () => {
                         {
                             isEditing ? 
                             <div className="textareaContainer">
-                            <textarea defaultValue={user.body.firstName} onChange={(e) => setEditFirstName(e.target.value)}></textarea> 
-                            <textarea defaultValue={user.body.lastName} onChange={(e) => setEditLastName(e.target.value)}></textarea>
+                            <input type="text" maxLength={12} defaultValue={user.body.firstName} onChange={(e) => setEditFirstName(e.target.value)}></input> 
+                            <input type="text" maxLength={12} defaultValue={user.body.lastName} onChange={(e) => setEditLastName(e.target.value)}></input>
                             </div> : 
                             <div className="nameContainer">
                                 <span>{(editFirstName ? editFirstName : user.body.firstName) || ""} </span>

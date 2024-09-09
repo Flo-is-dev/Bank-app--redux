@@ -317,7 +317,7 @@ body #root {
   gap: 12px;
 }
 
-.header .textareaContainer textarea {
+.header .textareaContainer input {
   resize: none;
   padding: 12px 0px 0px 20px;
   height: 27px;
