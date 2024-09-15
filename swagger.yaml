@@ -137,6 +137,12 @@ paths:
           description: Attach Bearer JWT token
           required: true
           type: string
+        - in: query
+          name: month
+          type: string
+          required: false
+          pattern: '^\\d{4}-(0[1-9]|1[0-2])$'
+          description: "The month of the transactions to filter (format: YYYY-MM)"
       produces:
         - application/json
       responses:
@@ -284,30 +290,32 @@ definitions:
       lastName:
         type: string
   TransactionsApiResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: array
-        items:
-          type: object
-          properties:
-            transaction_id:
-              type: string
-            date:
-              type: string
-              format: date
-            description:
-              type: string
-            amount:
-              type: number
-              format: float
-            balance:
-              type: number
-              format: float
+    type: array
+    items:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        body:
+          type: array
+          items:
+            type: object
+            properties:
+              transaction_id:
+                type: string
+              date:
+                type: string
+                format: date
+              description:
+                type: string
+              amount:
+                type: number
+                format: float
+              balance:
+                type: number
+                format: float
   Transaction:
     type: object
     properties:
