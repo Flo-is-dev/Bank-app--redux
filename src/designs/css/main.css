@@ -304,6 +304,7 @@ body #root {
 .header {
   color: #fff;
   margin-bottom: 2rem;
+  margin-inline: 1rem;
 }
 
 .textareaContainer {
@@ -347,5 +348,19 @@ body #root {
 
   .transaction-button {
     width: 200px;
+  }
+}
+
+@media (max-width: 720px) {
+  .main-nav-item-container {
+    gap: 5px;
+  }
+  .main-nav-item-container a {
+    text-align: end;
+  }
+
+  .textareaContainer {
+    flex-direction: column;
+    align-items: center;
   }
 }
